@@ -1,0 +1,14 @@
+{
+  "name": "TaikoJest",
+  "author": "jaydeepc@thoughtworks.com",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "latest",
+    "taiko": "latest",
+    "mocha": "latest",
+    "babel": "latest",
+    "jest-json-reporter": "latest"
+  }
+}
