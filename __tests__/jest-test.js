@@ -1,35 +1,31 @@
-const { Base } = require("../screens/base");
-const { openBrowser, goto, write, click, closeBrowser } = require('/usr/local/bin/taiko');
+const { openBrowser, write, closeBrowser, goto, press, text, focus, inputField, toRightOf } = require('taiko');
 
+describe('Getting Started with Jest and Taiko', () => {
 
-const APP = "http://the-internet.herokuapp.com/";
-var base = new Base();
-var securePage;
+    beforeAll(async () => {
+        await openBrowser({ headless: false });
+    });
 
-beforeAll(async () => {
-  browser = await base.openTheBrowser();
-});
+    describe('Search Taiko Repository', () => {
 
-afterAll(async () => {
-  browser.closeTheBrowser();
-});
+        test('Goto getgauge github page', async () => {
+            await goto('https://github.com/getgauge');
+        });
 
-describe("Form authentication", async () => {
+        test('Search for "Taiko"', async () => {
+            await focus(inputField(toRightOf('Pricing')))
+            await write('Taiko');
+            await press('Enter');
+        });
 
-  it("Verifies valid user can log in to Secure Area", async () => {
-    securePage = await (
-                    await (
-                        await browser.navigateToApplication(APP))
-                                     .clickOnFormAuthentication())
-                                     .login('tomsmith','SuperSecretPassword!');
+        test('Page contains "getgauge/taiko"', async () => {
+            await expect(text('getgauge/taiko').exists()).toBeTruthy();
+        });
 
-    expect((await securePage.getSecureAreaHeader()).exists()).toBeTruthy();
-  });
+    });
 
-  it("Verifies logout from secure area takes user back to login page", async () => {
-    loginPage = await securePage.logOut();
-
-    expect((await loginPage.getLoginPageHeader()).exists()).toBeTruthy();
-  });
+    afterAll(async () => {
+        await closeBrowser();
+    });
 
 });

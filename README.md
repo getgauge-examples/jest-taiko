@@ -5,8 +5,7 @@ Taiko integration with Jest
 
 To run the test:
 
-**cd to jest-taiko**
-
-**npm install**
-
-**npm test**
+```
+> npm install
+> npm test
+```

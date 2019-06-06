@@ -1,14 +1,27 @@
 {
-  "name": "TaikoJest",
-  "author": "jaydeepc@thoughtworks.com",
+  "name": "jest-taiko",
+  "version": "1.0.0",
+  "description": "Sample template to start project that uses taiko with jest runner",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getgauge-examples/jest-taiko.git"
+  },
+  "keywords": [
+    "taiko",
+    "jest"
+  ],
+  "author": "getgague",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getgauge-examples/jest-taiko/issues"
+  },
+  "homepage": "https://github.com/getgauge-examples/jest-taiko#readme",
   "dependencies": {
     "jest": "latest",
-    "taiko": "latest",
-    "mocha": "latest",
-    "babel": "latest",
-    "jest-json-reporter": "latest"
+    "taiko": "latest"
   }
 }
