@@ -13,7 +13,7 @@ describe('Getting Started with Jest and Taiko', () => {
         });
 
         test('Search for "Taiko"', async () => {
-            await focus(inputField(toRightOf('Pricing')))
+            await focus(textBox(/Search/))
             await write('Taiko');
             await press('Enter');
         });
