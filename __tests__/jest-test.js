@@ -1,4 +1,4 @@
-const { openBrowser, write, closeBrowser, goto, press, text, focus, inputField, toRightOf } = require('taiko');
+const { openBrowser, write, closeBrowser, goto, press, text, focus, textBox, inputField, toRightOf } = require('taiko');
 
 describe('Getting Started with Jest and Taiko', () => {
 
