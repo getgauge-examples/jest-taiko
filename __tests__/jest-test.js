@@ -1,4 +1,4 @@
-const { openBrowser, write, closeBrowser, goto, press, text, focus, inputField, toRightOf } = require('taiko');
+const { openBrowser, write, closeBrowser, goto, press, text, focus, textBox, inputField, toRightOf } = require('taiko');
 
 describe('Getting Started with Jest and Taiko', () => {
 
@@ -13,7 +13,7 @@ describe('Getting Started with Jest and Taiko', () => {
         });
 
         test('Search for "Taiko"', async () => {
-            await focus(inputField(toRightOf('Pricing')))
+            await focus(textBox(/Search/))
             await write('Taiko');
             await press('Enter');
         });
